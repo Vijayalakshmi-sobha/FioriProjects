@@ -1,0 +1,31 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.Objectlist"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <SearchField id="s1" width="500px" liveChange="onLive" ></SearchField>
+
+    <List id="lid1"
+          headerText="Fruits" 
+          items="{
+                    path: '/fruit',
+                    sorter: { path: 'name', descending: false }
+                }"  
+          mode="Delete"
+          delete="onDelete">
+        <items>
+            <ObjectListItem title="{name}" icon="{image}">
+                <attributes>
+                    <ObjectAttribute title="{color}" text="{healthbenefits}">
+                        <customContent>
+                            <Text text="{taste}"></Text>
+                        </customContent>
+                    </ObjectAttribute>
+                </attributes>
+            </ObjectListItem>
+        </items>
+        </List>
+
+
+    </Page>
+</mvc:View>

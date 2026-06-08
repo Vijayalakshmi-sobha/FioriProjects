@@ -1,0 +1,12 @@
+<mvc:View controllerName="com.applexus.routing.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <!-- <App id="app"> -->
+
+        <SplitApp id="app">
+        
+        </SplitApp>
+
+    <!-- </App> -->
+</mvc:View>

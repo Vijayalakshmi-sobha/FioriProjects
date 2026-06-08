@@ -1,0 +1,128 @@
+{
+  "_version": "1.82.0",
+  "sap.app": {
+    "id": "com.applexus.routing",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.4",
+      "toolsId": "3627427b-ffd0-4a64-934b-cf6dac585387"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.145.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.routing.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "../model/SampleData/fruit.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.applexus.routing.view",
+        "async": true,
+        "viewPath": "com.applexus.routing.view"
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteInfo",
+          "pattern": "fruit/{fruitId}",
+          "target": [
+           
+            "Targetfruit"
+          ]
+        },
+          {
+          "name": "Routefruit",
+          "pattern": "fruit",
+          "target": [
+            "Targetfruit"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "controlAggregation": "masterPages",
+          "id": "Home",
+          "name": "Home"
+        },
+        "TargetInfo": {
+          "controlAggregation": "detailPages",
+          "id": "Fruitinfo",
+          "name": "Fruitinfo"
+        },
+          "Targetfruit": {
+          "controlAggregation": "detailPages",
+          "id": "Detail",
+          "name": "Detail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.routing.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

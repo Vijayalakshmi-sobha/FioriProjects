@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:f="sap.ui.layout.form">
+   
+        <f:SimpleForm id="sf1" >
+                <Label text="Fruit"/>
+                <Input value="{name}"/>
+                <Label text="Color"/>
+                <Input value="{color}"/>
+                <Label text="Taste"/>
+                <Input value="{taste}"/>
+        </f:SimpleForm>
+
+
+</core:FragmentDefinition>

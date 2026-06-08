@@ -1,0 +1,9 @@
+<mvc:View controllerName="com.applexus.odata.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <!-- <SplitApp id="app">
+    
+    </SplitApp> -->
+    <App  id="app" />
+</mvc:View>

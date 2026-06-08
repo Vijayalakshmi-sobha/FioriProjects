@@ -1,0 +1,123 @@
+{
+    "empTab": [
+    {
+        "empId": "100",
+        "empName": "Akshay",
+        "gender": "https://th.bing.com/th/id/R.a3f014185b31fa35211541e0a56f9eb7?rik=CNGPOA8MNiJLvw&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc9KK69Ri.png&ehk=NEbOSOtNaxWJyGMEsIW5C%2fgUv8%2bDAY12mvu31Hqau9Q%3d&risl=&pid=ImgRaw&r=0",
+        "empDob" :"20220210",
+        "salary": "10000",
+        "currency": "USD",
+        "mstatus": "S",
+        "smoker": true,
+        "rating": "3",
+        "progress":"25",
+        "jobType" : "FullTime",
+        "education": "12",
+        "insurance":true
+   
+    },
+    {
+        "empId": "200",
+        "empName": "Akhil",
+        "gender":"https://th.bing.com/th/id/R.a3f014185b31fa35211541e0a56f9eb7?rik=CNGPOA8MNiJLvw&riu=http%3a%2f%2fclipart-library.com%2fimages%2fdc9KK69Ri.png&ehk=NEbOSOtNaxWJyGMEsIW5C%2fgUv8%2bDAY12mvu31Hqau9Q%3d&risl=&pid=ImgRaw&r=0",
+        "empDob" :"20221213",
+        "salary": "10050",
+        "currency": "USD",
+        "mstatus": "M",
+        "smoker": true,
+        "rating": "4",
+        "progress":"65",
+        "jobType" : "PartTime",
+        "education": "MBA",
+        "insurance":false
+    },
+    {
+        "empId": "250",
+        "empName": "Rose",
+        "gender": "https://images.emojiterra.com/google/android-12l/512px/2640.png",
+        "empDob" :"20220213",
+        "salary": "10050",
+        "currency": "USD",
+        "mstatus": "S",
+        "smoker": true,
+        "rating": "4",
+        "progress":"55",
+         "jobType" : "FullTime",
+         "education": "MTECH",
+        "insurance":true
+    },
+    {
+        "empId": "300",
+        "empName": "Ramya",
+         "empDob" :"20220213",
+        "gender": "https://images.emojiterra.com/google/android-12l/512px/2640.png",
+        "salary": "12050",
+        "currency": "USD",
+        "mstatus": "S",
+        "smoker": true,
+        "rating": "5",
+        "progress":"85",
+        "jobType" : "PartTime",
+        "education": "BTECH",
+        "insurance":true
+        
+
+    },
+        {
+        "empId": "400",
+        "empName": "Akhila",
+         "empDob" :"20220213",
+        "gender": "https://images.emojiterra.com/google/android-12l/512px/2640.png",
+        "salary": "12050",
+        "currency": "USD",
+        "mstatus": "M",
+        "smoker": false,
+        "rating": "5",
+        "progress":"100",
+        "jobType" : "FullTime",
+        "education": "PHD",
+        "insurance":false  
+
+    },
+            {
+        "empId": "500",
+        "empName": "Neena",
+         "empDob" :"20221213",
+        "gender": "https://images.emojiterra.com/google/android-12l/512px/2640.png",
+        "salary": "12050",
+        "currency": "USD",
+        "mstatus": "S",
+        "smoker": false,
+        "rating": "5",
+        "progress":"100",
+        "jobType" : "FullTime",
+        "education": "PHD",
+        "insurance":true
+        
+
+    },
+        {
+        "empId": "800",
+        "empName": "Amala",
+         "empDob" :"20221113",
+        "gender": "https://images.emojiterra.com/google/android-12l/512px/2640.png",
+        "salary": "1202225550",
+        "currency": "USD",
+        "mstatus": "M",
+        "smoker": true,
+        "rating": "5",
+        "progress":"100",
+        "jobType" : "FullTime",
+        "education": "BTECH",
+        "insurance":true
+    }
+],
+  "educationCollection": [
+    { "educationId": "10", "name": "10th" },
+    { "educationId": "12", "name": "12th" },
+    { "educationId": "MTECH", "name": "M.Tech" },
+    { "educationId": "BTECH", "name": "B.Tech" },
+    { "educationId": "MBA", "name": "MBA" },
+    { "educationId": "PHD", "name": "PhD" }
+  ]
+}

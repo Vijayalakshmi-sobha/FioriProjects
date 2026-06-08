@@ -1,0 +1,20 @@
+<mvc:View controllerName="com.applexus.odata.controller.Getdeep"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="Getdeep" title="{i18n>title}">
+
+    <f:SimpleForm >
+            <Label text="Matnr" />
+            <Input change="onChange" value="{oJson>/mat/MaterialNumber}"/>
+            <Label text="Description" />
+            <Input editable="false" value="{oJson>/mat/MaterialDesc}"></Input>
+             <Label text="Created" />
+            <Input editable="false" value="{oJson>/mat/CreatedOn}"></Input>
+    </f:SimpleForm>
+    <Button text="Clear" press="onClear"></Button>
+
+    <Button text="Next"  press="onNext"/>
+
+    </Page>
+</mvc:View>

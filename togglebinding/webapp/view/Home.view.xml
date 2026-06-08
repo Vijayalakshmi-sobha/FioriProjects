@@ -1,0 +1,27 @@
+<mvc:View controllerName="com.applexus.togglebinding.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     xmlns:f="sap.ui.layout.form">
+     
+    <Page id="page" title="{i18n>title}">
+
+    <f:SimpleForm   >
+    
+        <f:content>
+        
+            <Label text="Employee ID"></Label>
+            <Input id = 'i1'  width="250px"  />
+
+            <Label text="Employee Name"></Label>
+            <Input id = 'i2'  width="250px"  />
+
+            <Label id = 'l1' />
+            <ToggleButton id='t1' width="250px" text="Get Value" press="onPress"></ToggleButton>
+
+        </f:content>
+
+
+    </f:SimpleForm>
+
+    </Page>
+</mvc:View>

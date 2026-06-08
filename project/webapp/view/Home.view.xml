@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="com.applexus.project.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page id="page" title="{i18n>title}">
+
+        <f:SimpleForm>
+            <f:content>
+                <Label text="Employee ID" />
+                <Input id="i1" editable="true" width="250px" value="{/empStr/empId}" />
+
+                <Label text="Employee Name" />
+                <Input id="i2" editable="false" width="250px" value="{/empStr/empName}" />
+
+                <Label text="Employee Salary" />
+                <Input id="i3" editable="false" width="250px"/>
+
+                <Label text="Currency Code" />
+                <Input id="i4" editable="false" width="250px" />
+
+                <Label id="l1" text="get" />
+                <Button
+                    id="b1"
+                    press="onPress"
+                    text="Get"
+                    type="Ghost"
+                    width="250px" />
+            </f:content>
+        </f:SimpleForm>
+
+        <VBox>
+            <Button text="Submit1" class="sapUiSmallMarginBottom" />
+            <Button text="Submit2" class="sapUiMediumMarginBottom" />
+            <Button text="Submit3" class="sapUiLargeMarginBottom" />
+        </VBox>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZB18_11_ODATA_DEEP_SALES_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="So_header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vbeln"/>
+                </Key>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="SD Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="So_header_item_nav" Relationship="ZB18_11_ODATA_DEEP_SALES_SRV.So_header_item" FromRole="FromRole_So_header_item" ToRole="ToRole_So_header_item"/>
+                <NavigationProperty Name="So_header_msg_nav" Relationship="ZB18_11_ODATA_DEEP_SALES_SRV.So_header_msg" FromRole="FromRole_So_header_msg" ToRole="ToRole_So_header_msg"/>
+            </EntityType>
+            <EntityType Name="So_item" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Vbeln"/>
+                </Key>
+                <Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="SD Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Posnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="So_msg" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Message type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Message Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="So_header_msg" sap:content-version="1">
+                <End Type="ZB18_11_ODATA_DEEP_SALES_SRV.So_header" Multiplicity="1" Role="FromRole_So_header_msg"/>
+                <End Type="ZB18_11_ODATA_DEEP_SALES_SRV.So_msg" Multiplicity="*" Role="ToRole_So_header_msg"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_So_header_msg">
+                        <PropertyRef Name="Vbeln"/>
+                    </Principal>
+                    <Dependent Role="ToRole_So_header_msg">
+                        <PropertyRef Name="Type"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="So_header_item" sap:content-version="1">
+                <End Type="ZB18_11_ODATA_DEEP_SALES_SRV.So_header" Multiplicity="1" Role="FromRole_So_header_item"/>
+                <End Type="ZB18_11_ODATA_DEEP_SALES_SRV.So_item" Multiplicity="*" Role="ToRole_So_header_item"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_So_header_item">
+                        <PropertyRef Name="Vbeln"/>
+                    </Principal>
+                    <Dependent Role="ToRole_So_header_item">
+                        <PropertyRef Name="Vbeln"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZB18_11_ODATA_DEEP_SALES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="So_headerSet" EntityType="ZB18_11_ODATA_DEEP_SALES_SRV.So_header" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="So_itemSet" EntityType="ZB18_11_ODATA_DEEP_SALES_SRV.So_item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="So_msgSet" EntityType="ZB18_11_ODATA_DEEP_SALES_SRV.So_msg" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="So_header_itemSet" Association="ZB18_11_ODATA_DEEP_SALES_SRV.So_header_item" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="So_headerSet" Role="FromRole_So_header_item"/>
+                    <End EntitySet="So_itemSet" Role="ToRole_So_header_item"/>
+                </AssociationSet>
+                <AssociationSet Name="So_header_msgSet" Association="ZB18_11_ODATA_DEEP_SALES_SRV.So_header_msg" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="So_headerSet" Role="FromRole_So_header_msg"/>
+                    <End EntitySet="So_msgSet" Role="ToRole_So_header_msg"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="/sap/opu/odata/sap/ZB18_11_ODATA_DEEP_SALES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="/sap/opu/odata/sap/ZB18_11_ODATA_DEEP_SALES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

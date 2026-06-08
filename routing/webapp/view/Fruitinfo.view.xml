@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.applexus.routing.controller.Fruitinfo"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+
+        <f:SimpleForm >
+            <Label text="Fruit"></Label>
+            <Input value="{name}"></Input>
+            <Label text="Color"></Label>
+            <Input value="{color}"></Input>
+            <Label text="Size"></Label>
+            <Input value="{size}"></Input>
+            <Label text="Taste"></Label>
+            <Input value="{taste}"></Input>
+        </f:SimpleForm>
+
+    </Page>
+</mvc:View>

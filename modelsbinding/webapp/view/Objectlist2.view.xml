@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="com.applexus.modelsbinding.controller.Objectlist"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="page" title="{i18n>title}">
+
+        <Toolbar>
+            <SearchField
+                width="500px"
+                liveChange="onChange"
+                class="sapuiMediumMarginEnd" />
+
+            <Button
+                icon="https://static.vecteezy.com/system/resources/previews/010/968/598/original/trash-can-icon-free-vector.jpg"
+                press="onPress" />
+            
+            <Button text="Next" press="onNext" type="Emphasized"></Button>
+            
+        </Toolbar>
+
+        <List
+            id="lid2"
+            headerText="Fruits"
+            mode="MultiSelect"
+            selectionChange="onSelect"
+            items="{
+                path: '/fruit',
+                sorter: { path: 'name', descending: true }
+            }">
+
+            <items>
+                <ObjectListItem
+                    title="{name}"
+                    icon="{image}"
+                    number="{price}"
+                    numberUnit="{curr}">
+
+                    <attributes>
+                        <ObjectAttribute
+                            title="{color}"
+                            text="{healthbenefits} {taste}" />
+                    </attributes>
+
+                </ObjectListItem>
+            </items>
+
+        </List>
+
+    
+
+    </Page>
+
+</mvc:View>

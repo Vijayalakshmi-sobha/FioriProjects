@@ -1,0 +1,44 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+
+        <f:SimpleForm   >
+
+                <f:content>
+                
+                    <Label text="Employee ID"></Label>
+                    <Input id = 'i1'  width="250px"  value ="{/empStr/empId}" />
+                    <Label text="Employee Name"></Label>
+                    <Input id="i2"  width="250px" value = "{path:'/empStr/empName'}"/>
+                    <Label  text="Employee Salary"></Label>
+                    <Input id="i3"  width="250px" ></Input>
+                    <Label  text="Currency Code"></Label> 
+                    <Input  id="i4"  width="250px"></Input>
+
+                    <Label  />                                                                                  
+                    <Button  text="Get" press="onPress" width="250px" />
+                    
+                </f:content>
+        </f:SimpleForm>
+                
+        <f:SimpleForm   >
+                <f:content>
+                
+                    <Label text="Employee ID"></Label>
+                    <Input id = 'i5'  width="250px"  value ="{/empStr/empId}" />
+                    <Label text="Employee Name"></Label>
+                    <Input id="i6"  width="250px" value = "{path:'sec>/empStr/empName'}"/>
+                    <Label text="CompanyName" />                                                                                  
+                    <Input  id="i7" editable="{=${sec>/empStr/empName} === 'Viju' ? false : true}" width="250px" value = "{sec>/empStr/cName}"></Input>
+                    
+                </f:content>
+        </f:SimpleForm>
+
+        <Button text="Next" type="Default" press="onNext"></Button>
+        <Button text="View Table" type="Default" press="onTable"></Button>
+        <Button text="View CV" type="Default" press="onCV"></Button>
+    </Page>
+
+</mvc:View>

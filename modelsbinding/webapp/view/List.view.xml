@@ -1,0 +1,111 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <List headerText="Fruits">
+
+        <items>
+
+                <DisplayListItem label="Name" value="Apple" ></DisplayListItem>
+                
+                <StandardListItem title="Mango" 
+                                 icon="https://cdn3.iconfinder.com/data/icons/fruit-lineal-color/512/mango-1024.png" 
+                                 info="Mango is the national fruit of india"
+                                 description="A mango is an edible stone fruit produced by the tropical tree Mangifera indica. "
+                                 iconInset="true">
+                
+                        <!-- if icon is not here we can use avatar aggregation instead -->
+
+                        <!-- <avatar >
+                            <Avatar src="https://cdn3.iconfinder.com/data/icons/fruit-lineal-color/512/mango-1024.png"></Avatar>    
+                        </avatar> -->
+                </StandardListItem>
+
+                <InputListItem label="Enter Details" 
+                               labelTextDirection="LTR">
+                
+                    <content>
+
+                        <VBox >
+                            <Label text="Enter Name"/>
+                            <Input width="300px"></Input>
+                        </VBox>
+                        <VBox >
+                            <Label text="Enter fruit"/>
+                            <TextArea width="400px"></TextArea>
+                        </VBox>
+                        <VBox >
+                            <Button text="Submit"></Button>
+                        </VBox>
+                    </content>
+    
+                </InputListItem>
+                
+                <FeedListItem
+                    sender="Vijaya"
+                    text="Purchased Some Good Apple."
+                    timestamp="2026-03-17 10:30"
+                    type="Detail"
+                    icon="data:image/webp;base64,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">
+    
+                    
+                </FeedListItem>
+        
+                <ActionListItem text="Add to Cart" />
+                <ActionListItem text="Remove From Cart" />
+
+                
+        <CustomListItem>
+            <content>
+                <HBox alignItems="Center" justifyContent="SpaceBetween">
+                    <items>
+                                <Avatar 
+                                    src="https://cdn3.iconfinder.com/data/icons/fruit-lineal-color/512/apple-1024.png" 
+                                    displayShape="Circle" />
+                                
+                                <VBox>
+                                        <Text text="Apple" />
+                                        <Text text="Sweet and crunchy" />
+                                </VBox>
+                        <Button text="Add" type="Emphasized"/>
+                    </items>
+                </HBox>
+            </content>
+        </CustomListItem>
+ 
+
+        </items>
+
+    </List>
+
+    <Table headerText="Column List ">
+    <columns>
+        <Column>
+            <Text text="Fruit" />
+        </Column>
+        <Column>
+            <Text text="Taste" />
+        </Column>
+    </columns>
+
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="Apple" />
+                <Text text="Crisp and fresh" />
+            </cells>
+        </ColumnListItem>
+
+        <ColumnListItem>
+            <cells>
+                <Text text="Mango" />
+                <Text text="Sweet and juicy" />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+
+
+    </Page>
+</mvc:View>

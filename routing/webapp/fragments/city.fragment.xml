@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+    
+<Toolbar>
+    <Button 
+        icon="sap-icon://filter" 
+        press="onTool" />
+</Toolbar>
+                <Table id = "t1" items="{/city}" >
+                <columns>
+                    <Column>
+                        <header>
+                            <Text text="City Id" />
+                        </header>
+                    </Column>
+
+                    <Column>
+                        <header>
+                                <Text text="City Name" />
+                        </header>
+                    </Column>
+
+                    <Column>
+                        <header>
+                                <Text text="State" />
+                        </header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                                <Text text="{id}" />
+                                <Input 
+                                        value="{name}" 
+                                        showValueHelp="true"
+                                        valueHelpRequest="onCity" />
+                            <Text text="{state}" />
+                        </cells>
+                    </ColumnListItem>
+        </items>
+    </Table>
+
+</core:FragmentDefinition>

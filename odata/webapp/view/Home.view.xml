@@ -1,0 +1,47 @@
+<mvc:View controllerName="com.applexus.odata.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <Toolbar>
+                    <SearchField
+                        width="800px"
+                        liveChange="onChange"
+                        class="sapuiMediumMarginEnd" />
+
+            <Button
+                icon="https://static.vecteezy.com/system/resources/previews/010/968/598/original/trash-can-icon-free-vector.jpg"
+                press="onPress" />
+            
+        </Toolbar>
+
+        <List
+            id="lid2"
+            headerText="MATERIAL"
+            mode="SingleSelectMaster"
+            selectionChange="onSelect"
+            items="{
+                path: '/MaterialSet'
+               
+            }"
+            growing="true"
+            growingThreshold="2"
+            >
+
+            <items>
+                <ObjectListItem
+                    title="{MaterialDesc}"
+                    number="{CreatedOn}">
+
+                    <attributes>
+                        <ObjectAttribute
+                            title="{MaterialNumber}" />
+                    </attributes>
+
+                </ObjectListItem>
+            </items>
+
+        </List>
+        <Button text="Deep Entity" press="onDeep" />
+    </Page>
+</mvc:View>

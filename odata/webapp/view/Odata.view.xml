@@ -1,0 +1,44 @@
+<mvc:View controllerName="com.applexus.odata.controller.Odata"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+     <Page id="Odata" title="Odata Creation,Updation,Deletion ">
+
+          <Input
+            id="i1"
+            placeholder="Material Number"
+            width="300px" 
+            value="{oJson>/mat/MaterialNumber}"/>
+        
+        <Input
+            id="i2"
+            placeholder="Description"
+            width="300px" 
+            value = "{oJson>/mat/MaterialDesc}"/>
+        
+        <Input
+            id="i3"
+            placeholder="Created On"
+            tooltip="Please enter date in yyyy-mm-dd format (e.g., 2026-03-27)"
+            width="300px" 
+            value = "{oJson>/mat/CreatedOn}"/>
+        
+        
+        <HBox >
+            <Button
+                text="Clear"
+                press="onClear" />
+            <Button
+                text="Save"
+                press="onSave" />
+            <Button
+                text="Update"
+                press="onUpdate" />
+            <Button
+                text="Delete"
+                press="onDelete" />
+        </HBox>
+
+
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,38 @@
+<mvc:View controllerName="com.applexus.odata.controller.Deep"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="{i18n>title}">
+
+        <List items="{
+            path: 'ZB18_11_ODATA_DEEP_SALES_SRV>/So_headerSet',
+            parameters: { expand: 'So_header_item_nav' }
+        }">
+
+            <items>
+                <CustomListItem>
+                    <content>
+
+                            <!-- Header Data -->
+                        <VBox >
+                            <Text text="{ZB18_11_ODATA_DEEP_SALES_SRV>Vbeln}" />
+                            <Text text="{ZB18_11_ODATA_DEEP_SALES_SRV>Ernam}" />
+                            <Text text="{ZB18_11_ODATA_DEEP_SALES_SRV>Erdat}" />
+                        </VBox>
+                            <!-- item -->
+                            <List items="{ZB18_11_ODATA_DEEP_SALES_SRV>So_header_item_nav}">
+                                <!-- item has using navigation so no need for / -->
+                                <items>
+                                    <ObjectListItem
+                                        title="{ZB18_11_ODATA_DEEP_SALES_SRV>Posnr}"
+                                        number="{ZB18_11_ODATA_DEEP_SALES_SRV>Matnr}" />
+                                </items>
+                            </List>
+
+                    </content>
+                </CustomListItem>
+            </items>
+        </List>
+        <Button text="Getdeep" press="onGet"></Button>
+    </Page>
+</mvc:View>

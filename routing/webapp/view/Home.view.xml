@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.applexus.routing.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <Toolbar>
+            <SearchField
+                width="800px"
+                liveChange="onChange"
+                class="sapuiMediumMarginEnd" />
+
+            <Button
+                icon="https://static.vecteezy.com/system/resources/previews/010/968/598/original/trash-can-icon-free-vector.jpg"
+                press="onPress" />
+            
+        </Toolbar>
+
+        <List
+            id="lid2"
+            headerText="Fruits"
+            mode="SingleSelectMaster"
+            selectionChange="onSelect"
+            items="{
+                path: '/fruit',
+                sorter: { path: 'name', descending: true }
+            }">
+
+            <items>
+                <ObjectListItem
+                    title="{name}"
+                    icon="{image}"
+                    number="{price}"
+                    numberUnit="{curr}">
+
+                    <attributes>
+                        <ObjectAttribute
+                            title="{color}"
+                            text="{healthbenefits} // Taste ->{taste}" />
+                    </attributes>
+
+                </ObjectListItem>
+            </items>
+
+        </List>
+    </Page>
+</mvc:View>

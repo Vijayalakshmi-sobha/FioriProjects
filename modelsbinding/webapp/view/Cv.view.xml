@@ -1,0 +1,275 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.Cv"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:t="sap.ui.table"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:rm="sap.ui.table.rowmodes">
+    <Page id="page" title="{i18n>title}" class = "sapUiSmallMarginEnd">
+
+
+    <uxap:ObjectPageLayout
+                class = "sapUiSmallMarginEnd"
+                enableLazyLoading="true"
+                useIconTabBar="true"
+                subSectionLayout="TitleOnTop"
+        
+        >
+
+        <uxap:headerTitle class = "sapUiSmallMarginEnd">
+            <uxap:ObjectPageHeader
+                    objectTitle="{/profile/name}"
+                    objectSubtitle="{= ${/profile/title} + ' | ' + ${/profile/subTitle} }"
+                    markFavorite="true"
+                    showMarkers="true" />   
+        </uxap:headerTitle>
+
+        <uxap:headerContent class = "sapUiSmallMarginEnd">
+
+            <FlexBox  wrap="Wrap"  displayInline="true" class = "sapUiSmallMarginEnd">
+
+                <HBox >
+                    <Avatar
+                        src="{/profile/image}"
+                        displaySize="XL"
+                        displayShape="Circle"
+                        class="sapUiSmallMarginEnd"/>
+
+                    <Image src="{/profile/linkedinIcon}" 
+                         width="24px" height="24px" densityAware="true"/>
+                    <Link href="{/profile/linkedin}"
+                        text="LinkedIn"
+                        target="_blank"
+                        class="sapUiSmallMarginEnd"/>
+                
+                    <Image src="{/profile/twitterIcon}"
+                         width="24px" height="24px" densityAware="true"/>
+                    <Link href="{/profile/twitter}" text="Twitter" target="_blank"
+                          class="sapUiSmallMarginEnd"/>  
+
+                    <VBox justifyContent="End">
+                        <HBox >
+                            <Image src="{/profile/mailIcon}"
+                                    width="24px" height="24px" densityAware="true"/>
+                            <Text  text="{/profile/email}"
+                                    class="sapUiSmallMarginEnd"/>    
+                        </HBox>
+                        <HBox>
+                            <Image src="{/profile/phoneIcon}"
+                                    width="24px" height="24px" densityAware="true"/>
+                            <Text  text="{/profile/phone}"
+                                    class="sapUiSmallMarginEnd"/>
+                        </HBox>
+                        <HBox>
+                            <Image src="{/profile/locationIcon}"
+                                    width="24px" height="24px" densityAware="true"/>
+                            <Text  text="{/profile/location}"/>
+                        </HBox>
+                    </VBox>  
+                </HBox >
+            </FlexBox>
+
+        </uxap:headerContent>
+
+
+        <uxap:sections class = "sapUiSmallMarginEnd">
+            <uxap:ObjectPageSection title="About Me" class = "sapUiSmallMarginEnd">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Professional Summary">
+                            <uxap:blocks>
+                            <!-- <HBox width="100%">
+                                <VBox width="100%">  -->
+                            <FlexBox wrap="Wrap">
+                                <f:SimpleForm editable="false"
+                                              layout="ResponsiveGridLayout" >
+
+                                        <Label text="Professional Summary"/>
+                                        <Text text="{/about/summary}" width="100%"/>
+ 
+                                </f:SimpleForm>
+                            </FlexBox>
+                             <!-- </VBox>
+                            </HBox> -->
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection title="Carrer Objective" class = "sapUiSmallMarginEnd" >
+                            <uxap:blocks >
+                            <HBox width="100%">
+                                <VBox width="100%"> 
+                                <f:SimpleForm editable="false"
+                                                  layout="ResponsiveGridLayout">
+
+                                        <Label text="Goal"/>
+                                        <Text text="{/about/objective}" width="100%" />
+                                </f:SimpleForm>
+                                </VBox>
+                            </HBox>
+                            </uxap:blocks> 
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="Education" >
+
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Bachelor's Degree">
+                            <uxap:blocks>
+        
+                                    <StandardListItem
+                                        title="{/education/0/title}"
+                                        description="{/education/0/description}"
+                                        info="{/education/0/otherActivities}"/>
+                                    
+                                
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+        
+                        <uxap:ObjectPageSubSection title="Higher Secondary Education">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem
+                                        title="{/education/1/title}"
+                                        description="{/education/1/description}"
+                                        info="{/education/1/otherActivities}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection title="School Education">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem
+                                        title="{/education/2/title}"
+                                        description="{/education/2/description}"
+                                        info="{/education/2/otherActivities}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+
+            </uxap:ObjectPageSection> 
+            <uxap:ObjectPageSection title="Skills">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="SAP Technical Skills">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem title="{/sapSkills/0/name}"/>
+                                    <StandardListItem title="{/sapSkills/1/name}"/>
+                                    <StandardListItem title="{/sapSkills/2/name}"/>
+                                    <StandardListItem title="{/sapSkills/3/name}"/>
+                                    <StandardListItem title="{/sapSkills/4/name}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                         <uxap:ObjectPageSubSection title=" Other Technical Skills">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem title="{/otherSkills/0/name}"/>
+                                    <StandardListItem title="{/otherSkills/1/name}"/>
+                                    <StandardListItem title="{/otherSkills/2/name}"/>
+                                    <StandardListItem title="{/otherSkills/3/name}"/>
+                                    <StandardListItem title="{/otherSkills/4/name}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+                <uxap:ObjectPageSection title="Courses And Certifications">
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Certifications">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem
+                                            title="{/certifications/0/title}"/>
+                                    <StandardListItem
+                                            title="{/certifications/1/title}"/>
+                                    <StandardListItem 
+                                            title="{/certifications/2/title}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection title="Courses">
+                            <uxap:blocks>
+                                <List>
+                                    <StandardListItem
+                                            title="{/courses/0/title}"/>
+                                    <StandardListItem
+                                            title="{/courses/1/title}"/>
+                                    <StandardListItem 
+                                            title="{/courses/2/title}"/>
+                                    <StandardListItem 
+                                            title="{/courses/3/title}"/>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+
+            </uxap:sections> 
+
+            <uxap:ObjectPageSection title="Contact Me"> 
+
+                    <uxap:subSections>
+                            <uxap:ObjectPageSubSection title="Contact Methods">
+                                <uxap:blocks>
+
+                                    <t:Table
+                                        rowSelectionChange="rowSelectionChange"
+                                        selectionMode="Single"
+                                        rows="{/contacts}">
+                                        <t:rowMode>
+                                            <rm:Fixed
+                                              rowCount="3"/>
+                                        </t:rowMode>
+
+                                        <t:columns>
+                                            <t:Column>
+                                                <t:label>
+                                                    <Label text="Platform" />
+                                                </t:label>
+                                                <t:template>
+                                                        <Text text="{platform}"/>
+                                                </t:template>
+                                            </t:Column>
+                                        </t:columns>
+                                    </t:Table>
+
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+
+
+                            <uxap:ObjectPageSubSection title="Send Message">
+                                <uxap:blocks>
+
+                                    <f:SimpleForm id = 'sf'>
+
+                                        <Label text="Platform"/>
+                                        <Input value="{platform}"/>
+
+                                        <Label text="Contact"/>
+                                        <Input value="{value}"/>
+
+                                        <Label text="Message"/>
+                                        <TextArea rows="3"/>
+
+                                        <Label  />
+                                        <Button text="Send Message" type="Emphasized" width="125px"/>
+
+                                    </f:SimpleForm>
+
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+
+                    </uxap:subSections>
+
+                </uxap:ObjectPageSection>
+
+        </uxap:ObjectPageLayout>
+
+        </Page>
+</mvc:View>

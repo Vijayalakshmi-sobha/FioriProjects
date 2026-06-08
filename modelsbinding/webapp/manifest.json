@@ -1,0 +1,146 @@
+{
+  "_version": "1.82.0",
+  "sap.app": {
+    "id": "com.applexus.modelsbinding",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.4",
+      "toolsId": "65c2e502-3205-4e60-8cac-1557a3012e71"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.145.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.modelsbinding.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+         "uri": "../model/SampleData/fruit.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.applexus.modelsbinding.view",
+        "async": true,
+        "viewPath": "com.applexus.modelsbinding.view"
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteObjectlist2",
+          "pattern": "R",
+          "target": [
+            "TargetObject"
+          ]
+        },
+        {
+          "name": "Fruitroute",
+          "pattern": "f",
+          "target": [
+            "TargetFruit"
+          ]
+        },
+        {
+          "name": "RouteCV",
+          "pattern": "cv",
+          "target": [
+            "TargetCV"
+          ]
+        },
+        {
+          "name": "RouteTable",
+          "pattern": "tb",
+          "target": [
+            "TargetTable"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "id": "Home",
+          "name": "Home"
+        },
+        "TargetObject": {
+          "id": "Objectlist2",
+          "name": "Objectlist2"
+        },
+        "TargetFruit": {
+          "id": "Fruitroute",
+          "name": "Fruitroute"
+        },
+        "TargetCV": {
+          "id": "Cv",
+          "name": "Cv"
+        },
+        "TargetTable": {
+          "id": "Table",
+          "name": "Table"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.modelsbinding.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

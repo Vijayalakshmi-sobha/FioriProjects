@@ -1,0 +1,40 @@
+<mvc:View controllerName="com.applexus.modelbinding.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" >
+
+    <Page id="page" title="{i18n>title}">
+    
+
+    <f:SimpleForm   >
+    
+        <f:content>
+        
+            <Label text="Employee ID"></Label>
+            <Input id = 'i1'  width="250px"  value ="{/empStr/empId}" />
+            <Label text="Employee Name"></Label>
+            <Input id="i2"  width="250px" value = "{path:'/empStr/empName'}"/>
+            <Label  text="Employee Salary"></Label>
+            <Input id="i3"  width="250px"></Input>
+            <Label  text="Currency Code"></Label> 
+            <Input  id="i4"  width="250px"></Input>
+            <Label />
+            <Button press="onPress" text="Get" width="250px"/>
+             
+        </f:content>
+ 
+    </f:SimpleForm>
+    <VBox >
+        <HBox >
+            <Label text="Employee ID: " />
+            <Label text="{mod_data>/empStr/empId}" />
+        </HBox>
+         <HBox >
+            <Label text="Employee Name: " />
+            <Label text="{mod_data>/empStr/empName}" />
+        </HBox>
+    </VBox>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.Fruitroute"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="{i18n>title}">
+
+
+
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Text text="Welcome to Fruit Page " />
+                <Button text="Go Back" press="onBack" type="Ghost"/>
+            </VBox>
+        </content>
+
+
+
+ </Page>
+</mvc:View>

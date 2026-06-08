@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.applexus.calculator.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+    <VBox id = 'v1' height="100%"  width = "100%" justifyContent="Center" alignItems="Center">
+
+        <Input id = 'i1' placeholder="Enter the first Number" width = "250px"/>
+        <Input id = 'i2' placeholder="Enter the second Number" width = "250px"/>
+        <Label id ="l1" text = 'Choose the Operation'/>
+
+        <HBox id="h1">
+
+            <Button id = 'b1' text = '+' press="onPress"/>
+            <Button id = 'b2' text = '-' press="onPress"/>
+            <Button id = 'b3' text = '*' press="onPress"/>
+            <Button id = 'b4' text = '/' press="onPress"/>
+
+        </HBox>
+        <Label text = "Result"/>
+        <Input id = 'i3' editable="false" width = "250px"/>
+
+    </VBox>
+
+    </Page>
+</mvc:View>

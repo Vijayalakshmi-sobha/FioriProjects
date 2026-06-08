@@ -1,0 +1,16 @@
+<mvc:View controllerName="practice.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:s="sap.ui.comp.smarttable">
+
+    <Page id="page" title="Material List">
+
+    <s:SmartTable
+        id="smartTable"
+        entitySet="ZIB18_11_MaterialSet"
+        tableType="ResponsiveTable"
+        enableAutoBinding="true"
+        header="Material List"/>
+        
+    </Page>
+</mvc:View>

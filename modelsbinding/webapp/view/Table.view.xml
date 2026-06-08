@@ -1,0 +1,211 @@
+<mvc:View controllerName="com.applexus.modelsbinding.controller.Table"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:rm="sap.ui.table.rowmodes">
+    <Page id="page" title="{i18n>title}" >
+
+     <f:SimpleForm id="sf"  >
+    
+        <f:content>
+        
+            <Label text="{i18n>XFLD_empid}"></Label>
+            <Input   width="250px"  value="{empId}" />
+            <Label text="Employee Name"></Label>
+            <Input   width="250px" value="{empName}" />
+            <Label  text="Employee Salary"></Label>
+            <Input   width="250px" value="{path:'salary',formatter:'.myFormatter.currencyformatter'}" ></Input>
+            <Label  text="Currency"></Label>
+            <Input   width="250px" value="{currency}" ></Input>
+             
+        </f:content>
+ 
+    </f:SimpleForm>
+    
+
+    <t:Table rows="{/empTab}" 
+             rowSelectionChange="rowSelectionChange"
+             selectionMode="Single">
+    <!--visibleRowCount="5"  it is depreciated -->
+
+        <t:rowMode>
+        <rm:Fixed
+            rowCount="5"/>
+    </t:rowMode>
+
+        <t:columns>
+            <t:Column >
+                <t:label>
+                    <Label text = "{i18n>XFLD_empid}"/>
+                </t:label>
+                <t:template>
+                    <Text text="{empId}"></Text>
+                </t:template>
+            </t:Column>   
+            
+            <t:Column >
+                <t:label>
+                    <Label text = "EmpName"/>
+                </t:label>
+                <t:template>
+                    <!-- <Input value ="{path:'empName',formatter:'.formatter'}"></Input> -->
+                    <Input value ="{path:'empName',formatter:'.myFormatter.formatter'}"></Input>
+                </t:template>
+            </t:Column>  
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Gender"/>
+                </t:label>
+                <t:template>
+                     <Image src ="{gender}" width = "23px"></Image>
+                </t:template>
+            </t:Column>  
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Date Of Birth"/>
+                </t:label>
+                <t:template>
+                    <!-- <DatePicker value="{path:'empDob',formatter:'.myFormatter.dateformatter'}" displayFormat="yyyy-MM-dd"/> -->
+                    <DatePicker value="{path:'empDob', formatter:'.myFormatter.dateformatter'}" displayFormat="yyyyMMdd"/>
+                </t:template>
+            </t:Column>  
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Salary"/>
+                </t:label>
+                <t:template>
+                    <!-- <Input value="{salary}{currency}"/> -->
+                    <!-- <Input value="{= ${salary} + ' ' + ${currency} }"/> -->
+                    <Input value="{ parts:[{path:'salary'},{path:'currency'}],formatter:'.myFormatter.currencyformatter'}"/>
+                </t:template>
+            </t:Column>  
+
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Education Qualification"/>
+                </t:label>
+                <t:template>
+                    <Select
+					forceSelection= 'false'
+					selectedKey="{education}"
+					items="{
+						path: '/educationCollection',
+                        sorter: {
+                                    path: 'name'
+                                }
+                        
+						
+					}">
+					<core:Item key="{educationId}" text="{name}" />
+				</Select>
+                </t:template>
+            </t:Column>  
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Smoker"/>
+                </t:label>
+                <t:template>
+                <!-- <HBox> -->
+                  	<!-- <CheckBox text="Non-smoker" selected="{smoker}" /> -->
+		            <CheckBox text="Smoker" selected="{smoker}"/>
+                <!-- </HBox> -->
+                </t:template>
+
+            </t:Column>  
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Rating"/>
+                </t:label>
+                <t:template>
+                    <RatingIndicator value="{rating}"></RatingIndicator>
+                </t:template>
+            </t:Column>  
+            
+
+            <t:Column >
+                <t:label>
+                    <Label text = "Insurance Status"/>
+                </t:label>
+                <t:template>
+                 <Switch state="{insurance}" />
+                </t:template>
+            </t:Column>  
+
+
+            <t:Column>
+               <t:label>
+                   <Label text="Training Completion Status"/>
+                </t:label>
+                <t:template>
+                    <ProgressIndicator percentValue="{progress}" displayValue="{progress}%"/>
+                </t:template>
+            </t:Column>
+
+            <t:Column>
+                <t:label>
+                    <Label text="Employment Type"/>
+                </t:label>
+
+                <t:template>
+                    <RadioButtonGroup columns='2'>  
+                        <buttons>
+                            <RadioButton
+                                text="Part Time"
+                                selected="{= ${jobType} === 'PartTime' }"/>
+                            </buttons>
+                        <buttons>
+                            <RadioButton
+                                text="Full Time"
+                                selected="{= ${jobType} === 'FullTime' }"/>
+                        </buttons>
+                    </RadioButtonGroup>
+                </t:template>
+            </t:Column>
+
+   
+
+          <!-- <t:Column >
+                <t:label>
+                    <Label text="Employment Type"/>
+                </t:label>
+                <t:template >
+                    <VBox>
+                        <RadioButtonGroup  selectedIndex="{= ${jobType} === 'PartTime' ?  0 : 1}">
+                    
+                             <RadioButton text="Part Time"/>
+                            <RadioButton text="Full Time"/>
+           
+                        </RadioButtonGroup>
+                    </VBox>
+                </t:template>
+            </t:Column> -->
+
+
+            <t:Column>
+                <t:label>
+                    <Label text="Marital Status"/>
+                </t:label>
+
+                <t:template>
+                    <SegmentedButton selectedKey="{mstatus}">
+                        <items>
+                            <SegmentedButtonItem key="S" text="Single"/>
+                            <SegmentedButtonItem key="M" text="Married"/>
+                        </items>
+                    </SegmentedButton>
+                </t:template>
+            </t:Column>
+
+        </t:columns>
+    </t:Table>
+
+    </Page>
+</mvc:View>

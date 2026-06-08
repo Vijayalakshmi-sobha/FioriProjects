@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="com.applexus.routing.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page id="page" title="{i18n>title}">
+        <IconTabBar
+            id="idIconTabBar"
+            select="onFilterSelect"
+            class="sapUiResponsiveContentPadding">
+
+            <items>
+
+                <IconTabFilter
+                    text="More Info"
+                    key="fruit"
+                    icon="sap-icon://add-process">
+
+                    <core:Fragment
+                        fragmentName="com.applexus.routing.fragments.fruit"
+                        type="XML" />
+                </IconTabFilter>
+
+                <IconTabFilter
+                    text="Supplier"
+                    key="supplier"
+                    icon="sap-icon://supplier">
+
+                    <core:Fragment
+                        fragmentName="com.applexus.routing.fragments.supplier"
+                        type="XML" />
+                </IconTabFilter>
+
+                <IconTabFilter
+                    text="City"
+                    key="city"
+                    icon="sap-icon://home">
+
+                    <core:Fragment
+                        fragmentName="com.applexus.routing.fragments.city"
+                        type="XML" />
+                </IconTabFilter>
+
+            </items>
+        </IconTabBar>
+    </Page>
+</mvc:View>

@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+      xmlns:core="sap.ui.core">
+
+            <VBox id = "v1"  class="sapUiResponsiveContentPadding">
+                            <Label text = "Supplier Name"/>
+                            <Select items="{/supplier}">
+                                    <core:Item key="{id}" text="{name}" />
+                            </Select>
+
+                            <Label text = "Supplier City"/>
+                            <ComboBox 
+                                        items="{/supplier}">
+                                        <core:Item key="{id}" text="{city}" />
+                            </ComboBox>
+
+                            <Label text="Fruits" />
+                            <MultiComboBox items="{/supplier}" width="500px">
+                                        <core:Item key="{fruit}"  text="{fruit}" />
+                            </MultiComboBox> 
+
+            </VBox>
+
+</core:FragmentDefinition>

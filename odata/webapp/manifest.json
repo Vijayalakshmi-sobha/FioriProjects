@@ -1,0 +1,186 @@
+{
+  "_version": "1.82.0",
+  "sap.app": {
+    "id": "com.applexus.odata",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.4",
+      "toolsId": "4de7075d-22ba-451c-85f8-635cb36318f7"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZB18_11_ODATA_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZB18_11_ODATA_DEEP_SALES_SRV": {
+        "uri": "/sap/opu/odata/sap/ZB18_11_ODATA_DEEP_SALES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/ZB18_11_ODATA_DEEP_SALES_SRV/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZB18_11_ODATA_DEEP_DEL_SRV": {
+        "uri": "/sap/opu/odata/sap/ZB18_11_ODATA_DEEP_DEL_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/ZB18_11_ODATA_DEEP_DEL_SRV/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.146.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.applexus.odata.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "ZB18_11_ODATA_DEEP_SALES_SRV": {
+        "dataSource": "ZB18_11_ODATA_DEEP_SALES_SRV",
+        "preload": true,
+        "settings": {}
+      },
+      "ZB18_11_ODATA_DEEP_DEL_SRV": {
+        "dataSource": "ZB18_11_ODATA_DEEP_DEL_SRV",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.applexus.odata.view",
+        "async": true,
+        "viewPath": "com.applexus.odata.view"
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "f/{fruitId}",
+          "target": [
+            "TargetDetail"
+          ]
+        },
+        {
+          "name": "RouteDeep",
+          "pattern": "deep",
+          "target": [
+            "TargetDeep"
+          ]
+        },
+        {
+          "name": "RouteGetdeep",
+          "pattern": "gdeep",
+          "target": [
+            "TargetGetdeep"
+          ]
+        },
+        {
+          "name": "RouteOdata",
+          "pattern": "odata",
+          "target": [
+            "TargetOdata"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "id": "Home",
+          "name": "Home"
+        },
+        "TargetDetail": {
+          "id": "Detail",
+          "name": "Detail"
+        },
+        "TargetDeep": {
+          "id": "deep",
+          "name": "deep"
+        },
+        "TargetGetdeep": {
+          "id": "Getdeep",
+          "name": "Getdeep"
+        },
+        "TargetOdata":{
+          "id": "Odata",
+          "name": "Odata"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.applexus.odata.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
